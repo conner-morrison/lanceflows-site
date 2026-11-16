@@ -1,0 +1,250 @@
+/* Lanceflows additions to the Sumolo template.
+   Only what the template has no style for; colours, fonts and spacing follow
+   the template (red #ed1e24, Poppins headings, Roboto body, #777 text). */
+
+/* ---- Wordmark (text in place of the template's logo image) ---- */
+.logo { width: auto; }
+.lf-brand { display: inline-flex; flex-direction: column; line-height: 1; }
+.lf-brand-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+.lf-brand-name b { color: #ed1e24; font-weight: 700; }
+.lf-brand-tag {
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #b2b2b2;
+}
+.call-box .text strong a { color: inherit; }
+/* the email is longer than the template's phone number: keep the box on one line */
+.call-box ul { display: flex; align-items: center; }
+.call-box strong { font-size: 15px; white-space: nowrap; }
+.copyright-wrap .lf-brand-name { font-size: 28px; }
+.copyright-wrap .lf-brand-name b { color: #2d2d2d; }
+.copyright-wrap .lf-foot-link { color: #fff; margin-left: 20px; }
+.copyright-wrap .lf-foot-link:hover { text-decoration: underline; }
+
+/* ---- Page title banner: Lanceflows eyebrow + intro text ---- */
+.breadcrumb-title .lf-crumb-eyebrow {
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.breadcrumb-title h2 { overflow-wrap: anywhere; }
+.breadcrumb-title .lf-crumb-text {
+  color: #fff;
+  opacity: .85;
+  font-size: 17px;
+  line-height: 28px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+/* Lanceflows titles and intros are longer than the template's one-word titles:
+   keep them clear of the breadcrumb pill at the bottom of the banner */
+.breadcrumb-area { padding-bottom: 90px; }
+@media (max-width: 991px) {
+  .breadcrumb-title h2 { font-size: 44px; }
+}
+@media (max-width: 575px) {
+  .breadcrumb-title h2 { font-size: 32px; }
+  .breadcrumb-title .lf-crumb-text { font-size: 15px; line-height: 24px; }
+}
+
+/* ---- Section intro paragraph under a section title ---- */
+.section-title .lf-lead { max-width: 780px; margin: 20px auto 0; }
+.section-title.left-align .lf-lead,
+.section-title.text-left .lf-lead { margin-left: 0; }
+
+/* ---- Counters without the template's video block above them ---- */
+/* the template pulls this band up over its video block (margin-top:-290px) */
+.counter-area.lf-counter-standalone { margin-top: 0; padding-top: 90px; }
+.counter .lf-count-suffix {
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 20px;
+}
+
+/* ---- Item titles inside template lists ---- */
+.lf-li-title {
+  display: block;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.choose-area .choose-list li { align-items: flex-start; }
+/* the template's check list is white (it sits on a dark section); on light sections use body text colour */
+.about-area2 .about-content3 li { color: #777; margin-bottom: 18px; }
+
+/* ---- CTA band button ---- */
+.lf-btn-light,
+.lf-btn-light:hover {
+  background: #fff;
+  color: #ed1e24;
+  border-radius: 50px;
+  padding: 18px 40px;
+  font-weight: 600;
+}
+.lf-btn-light:hover { background: #222; color: #fff; }
+
+/* ---- Contact: "Prefer to talk live?" ---- */
+.lf-book-call { margin-top: 10px; }
+.lf-book-call h3 { font-size: 24px; margin-bottom: 10px; }
+.lf-book-call p { margin-bottom: 25px; }
+
+/* ---- Alternate light section background ---- */
+.lf-alt-bg { background: #f9f9f9; }
+
+/* ---- Case study cards ---- */
+.lf-case-card { width: 100%; }
+.lf-case-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.lf-case-num { font-family: 'Poppins', sans-serif; font-weight: 700; color: #ed1e24; }
+.lf-case-tag { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #9d9d9d; }
+.lf-case-domain { font-size: 13px; color: #9d9d9d; margin-bottom: 10px; }
+
+/* ---- Case study detail ---- */
+.lf-back-link { display: inline-block; margin-bottom: 20px; color: #ed1e24; font-weight: 600; }
+.lf-case h3 { margin: 40px 0 18px; font-size: 28px; }
+.lf-case h4 { margin: 10px 0 12px; font-size: 20px; }
+.lf-case ul.lf-x-list,
+.lf-case ul.lf-check-list { padding: 0; margin: 0 0 20px; list-style: none; }
+.lf-x-list li,
+.lf-check-list li { position: relative; padding-left: 28px; margin-bottom: 12px; }
+.lf-x-list li::before,
+.lf-check-list li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 400;
+  color: #ed1e24;
+}
+.lf-x-list li::before { content: "\f00d"; }
+.lf-check-list li::before { content: "\f00c"; }
+.post__tag ul li span {
+  font-size: 12px;
+  text-transform: uppercase;
+  border: 2px solid #e5e5e5;
+  padding: 7px 10px;
+  display: inline-block;
+  border-radius: 3px;
+  color: #9d9d9d;
+  margin-bottom: 10px;
+}
+.widget_recent_entries .post-date { display: block; }
+.lf-flow ol { padding-left: 0; list-style: none; counter-reset: lfstep; }
+.lf-flow li {
+  counter-increment: lfstep;
+  position: relative;
+  padding: 0 0 18px 44px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.lf-flow li::before {
+  content: counter(lfstep);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  background: #ed1e24;
+}
+.lf-flow-before li::before { background: #2d2d2d; }
+.lf-flow li strong { display: block; color: #222; font-family: 'Poppins', sans-serif; }
+.lf-flow-meta { display: block; font-size: 13px; color: #9d9d9d; margin: 2px 0 6px; }
+.lf-flow li p { margin: 0; }
+.lf-bottleneck {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #ed1e24;
+  vertical-align: middle;
+}
+
+/* ---- Legal pages ---- */
+.lf-legal h2 { font-size: 28px; margin: 40px 0 16px; }
+.lf-legal h3 { font-size: 20px; margin: 24px 0 12px; }
+.lf-legal ul { padding-left: 22px; margin-bottom: 20px; list-style: disc; }
+.lf-legal li { margin-bottom: 8px; list-style: disc; }
+.lf-legal li strong { color: #222; }
+.lf-legal .updated { color: #9d9d9d; font-size: 14px; }
+.lf-legal .legal-note {
+  background: #f9f9f9;
+  border-left: 4px solid #ed1e24;
+  padding: 25px 30px;
+  margin: 20px 0 10px;
+}
+.lf-legal a { color: #ed1e24; }
+
+/* ---- Human verification gate (ported from Lanceflows) ---- */
+.vh-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #2d2d2d;
+  opacity: 1;
+  transition: opacity .45s ease;
+}
+.vh-overlay.vh-hide { opacity: 0; pointer-events: none; }
+.vh-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 34px 30px;
+  text-align: center;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .55);
+}
+.vh-logo { margin: 0 auto 18px; }
+.vh-logo .lf-brand-name { color: #222; }
+.vh-card h2 { font-size: 24px; margin: 0 0 8px; }
+.vh-card p { font-size: 15px; margin: 0 0 24px; }
+.vh-turnstile { display: flex; justify-content: center; min-height: 65px; }
+.vh-error { color: #c0455f; font-size: 14px; margin: 14px 0 0; }
+.vh-foot { margin-top: 18px; font-size: 12px; color: #9d9d9d; }
+@media (prefers-reduced-motion: reduce) { .vh-overlay { transition: none; } }
+
+/* ---- Home slider: dark grey half-transparent cover over the background image ---- */
+/* sits above .image-layer (z 1, earlier in the DOM) and below the decorative lines (z 2-3) and text (z 9) */
+.slider-four .slider-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(26, 25, 25, 0.7);
+  pointer-events: none;
+}
+
+/* ---- Home slider zoom: once per visit (see components/SliderZoomOnce.tsx) ---- */
+/* the template zooms each slide as it becomes active; instead zoom all slides together,
+   once, while the section is in view, so the picture keeps one size as slides fade */
+.slider-four .slider-bg.slick-active .image-layer { transform: scale(1); }
+.slider-four.lf-zoom .slider-bg .image-layer { transform: scale(1.15); }
+/* when the section is left, snap back without animating so the next visit starts fresh */
+.slider-four.lf-zoom-reset .image-layer { transition: none; }
