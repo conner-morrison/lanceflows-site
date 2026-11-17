@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Header from "@/components/Header";
 import OffcanvasMenu from "@/components/OffcanvasMenu";
 import Footer from "@/components/Footer";
@@ -8,7 +9,8 @@ import SliderZoomOnce from "@/components/SliderZoomOnce";
 // Hero slide: a single slide, so the text animates only when the section is entered.
 const SLIDES = [
   {
-    h: "Your vision, our engineering, real results.",
+    // each entry is one line of the big heading
+    h: ["Your vision,", "our engineering,", "real results."],
     p: "From idea to architecture, engineering, AI automation, launch, maintain and growth.",
   },
 ];
@@ -59,7 +61,7 @@ export default function Home() {
         <section id="home" className="slider-area slider-four fix p-relative">
           <div className="slider-active">
             {SLIDES.map((s) => (
-              <div className="single-slider slider-bg d-flex align-items-center p-relative" key={s.h}>
+              <div className="single-slider slider-bg d-flex align-items-center p-relative" key={s.p}>
                 <div className="slider-line" data-animation="fadeInRight" data-delay=".8s">
                   {" "}
                   <img src="/img/bg/slider-line.png" alt="slider-line" />
@@ -73,7 +75,14 @@ export default function Home() {
                   <div className="row justify-content-center align-items-center">
                     <div className="col-lg-8 col-md-8">
                       <div className="slider-content s-slider-content mt-100">
-                        <h2 data-animation="fadeInUp" data-delay=".4s">{s.h}</h2>
+                        <h2 data-animation="fadeInUp" data-delay=".4s">
+                          {s.h.map((line, i) => (
+                            <Fragment key={line}>
+                              {i > 0 && <br />}
+                              {line}
+                            </Fragment>
+                          ))}
+                        </h2>
                         <p data-animation="fadeInUp" data-delay=".6s">{s.p}</p>
                         <div className="slider-btn mt-30" data-animation="fadeInUp" data-delay=".4s">
                           {" "}
@@ -93,6 +102,57 @@ export default function Home() {
         </section>
         <SliderZoomOnce target="#home" />
         {/* slider-area-end */}
+
+        {/* about-area */}
+        <section id="about" className="about-area about-p pt-120 pb-120 p-relative fix" style={{ backgroundImage: "url(/img/bg/about-bg.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center bottom", backgroundSize: "cover" }}>
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12 p-relative">
+                <div className="section-title center-align mb-50 text-center">
+                  <h5>About us · Who we are</h5>
+                  <h2>One coordinated delivery system</h2>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-lg-6 col-md-12 col-sm-12">
+                <div className="s-about-text p-relative  wow fadeInLeft  animated" data-animation="fadeInLeft" data-delay=".4s">
+                  <h2>
+                    12
+                    {" "}
+                    <sub>+</sub>
+                  </h2>
+                </div>
+              </div>
+              <div className="col-lg-6 col-md-12 col-sm-12">
+                <div className="about-content s-about-content  wow fadeInRight  animated" data-animation="fadeInRight" data-delay=".4s">
+                  <p>
+                    We are a full-service software engineering and AI delivery team made up of{" "}
+                    <strong>senior engineers with 12+ years of experience</strong> across product engineering, cloud architecture, automation, data systems, and applied artificial intelligence. Our strength comes from combining each specialist&apos;s expertise into one coordinated delivery system.
+                  </p>
+                  <div className="about-content3 pt-15">
+                    <div className="row align-items-center">
+                      <div className="col-md-4">
+                        <img src="/img/features/about_img2.png" alt="img" />
+                      </div>
+                      <div className="col-md-8">
+                        <p>
+                          We don&apos;t simply implement a client&apos;s initial idea. We help discover the full architecture, identify potential risks, design for stable scalability, prepare a future-ready technical roadmap, and execute through clear milestones — for controlled, predictable delivery without chaos.
+                        </p>
+                      </div>
+                    </div>
+                    <ul className="green">
+                      <li>Senior-led, architecture-first delivery from idea to stable, scalable reality.</li>
+                      <li>Transparent milestones, documented decisions, and predictable results.</li>
+                      <li>Future-ready engineering built for scale, security, and growth.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* about-area-end */}
 
         {/* counter-area */}
         <div className="counter-area lf-counter-standalone p-relative pb-90" style={{ backgroundImage: "url(/img/bg/counter-bg.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
@@ -151,57 +211,6 @@ export default function Home() {
           </div>
         </section>
         {/* services-three-area-end */}
-
-        {/* about-area */}
-        <section id="about" className="about-area about-p pt-120 pb-120 p-relative fix" style={{ backgroundImage: "url(/img/bg/about-bg.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center bottom", backgroundSize: "cover" }}>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12 p-relative">
-                <div className="section-title center-align mb-50 text-center">
-                  <h5>About us · Who we are</h5>
-                  <h2>One coordinated delivery system</h2>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-6 col-md-12 col-sm-12">
-                <div className="s-about-text p-relative  wow fadeInLeft  animated" data-animation="fadeInLeft" data-delay=".4s">
-                  <h2>
-                    12
-                    {" "}
-                    <sub>+</sub>
-                  </h2>
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-12 col-sm-12">
-                <div className="about-content s-about-content  wow fadeInRight  animated" data-animation="fadeInRight" data-delay=".4s">
-                  <p>
-                    We are a full-service software engineering and AI delivery team made up of{" "}
-                    <strong>senior engineers with 12+ years of experience</strong> across product engineering, cloud architecture, automation, data systems, and applied artificial intelligence. Our strength comes from combining each specialist&apos;s expertise into one coordinated delivery system.
-                  </p>
-                  <div className="about-content3 pt-15">
-                    <div className="row align-items-center">
-                      <div className="col-md-4">
-                        <img src="/img/features/about_img2.png" alt="img" />
-                      </div>
-                      <div className="col-md-8">
-                        <p>
-                          We don&apos;t simply implement a client&apos;s initial idea. We help discover the full architecture, identify potential risks, design for stable scalability, prepare a future-ready technical roadmap, and execute through clear milestones — for controlled, predictable delivery without chaos.
-                        </p>
-                      </div>
-                    </div>
-                    <ul className="green">
-                      <li>Senior-led, architecture-first delivery from idea to stable, scalable reality.</li>
-                      <li>Transparent milestones, documented decisions, and predictable results.</li>
-                      <li>Future-ready engineering built for scale, security, and growth.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* about-area-end */}
 
         {/* choose-area — why Lanceflows */}
         <section id="why" className="choose-area pt-113 pb-120 p-relative">
@@ -298,7 +307,7 @@ export default function Home() {
                       <i className="far fa-map"></i>
                     </div>
                     <h5>Office</h5>
-                    <p>Austin, Texas</p>
+                    <p>Miami, FL</p>
                   </div>
                   {" "}
                   <div className="single-cta pb-30 mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">

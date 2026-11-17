@@ -18,7 +18,7 @@ export default function OffcanvasMenu() {
               <a href="/case-study">Case Studies</a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom">
-              <a href="/#contact">Contact</a>
+              <a href="/contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -30,8 +30,8 @@ export default function OffcanvasMenu() {
               </a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom">
-              <a href="/#contact">
-                <span>Austin, Texas</span>
+              <a href="/contact">
+                <span>Miami, FL</span>
               </a>
             </li>
           </ul>

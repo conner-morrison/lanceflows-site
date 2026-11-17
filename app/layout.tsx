@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Lanceflows — Software Engineering & AI Services",
   description:
     "Lanceflows is a senior software engineering and AI team that turns your idea into a reliable, scalable product — with clear architecture, disciplined delivery, and zero chaos.",
-  icons: { shortcut: "/img/favicon.ico" },
+  // The favicon is app/icon.png (Next.js adds the <link rel="icon"> for it).
 };
 
 // The template's stylesheets, in the template's order.

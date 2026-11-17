@@ -20,10 +20,9 @@ export default function CaseStudyPage() {
       <OffcanvasMenu />
       <main>
         <Breadcrumb
-          eyebrow="Selected project examples"
           title="Real problems, stable solutions."
           current="Case Studies"
-          text="We help clients turn unclear technical goals into stable, scalable software systems. These selected examples show how our team applies senior engineering judgment, AI capability, cloud architecture, automation, and disciplined execution to real business problems."
+          image="/img/slider/b_details01_2x.jpg"
         />
 
         <section id="services-08" className="services-08 pt-145 pb-90 p-relative fix">

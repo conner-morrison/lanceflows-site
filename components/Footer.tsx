@@ -36,7 +36,7 @@ export default function Footer() {
                       <a href="/#why">Why Lanceflows</a>
                     </li>
                     <li>
-                      <a href="/#contact">Contact</a>
+                      <a href="/contact">Contact</a>
                     </li>
                   </ul>
                 </div>
@@ -50,7 +50,7 @@ export default function Footer() {
                 <div className="footer-link">
                   <ul>
                     <li>
-                      <a href="/#contact">Request a quote</a>
+                      <a href="/contact">Request a quote</a>
                     </li>
                     <li>
                       <a href="https://cal.com/lanceflows" target="_blank" rel="noopener">
@@ -82,7 +82,7 @@ export default function Footer() {
                       <span>
                         Office
                         <br />
-                        Austin, Texas
+                        Miami, FL
                       </span>
                     </li>
                     {" "}

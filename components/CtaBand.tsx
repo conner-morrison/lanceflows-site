@@ -2,7 +2,7 @@
 export default function CtaBand({
   title,
   text,
-  href = "/#contact",
+  href = "/contact",
   button = "Contact us",
 }: {
   title: string;

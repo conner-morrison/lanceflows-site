@@ -6,15 +6,21 @@ export default function Breadcrumb({
   eyebrow,
   text,
   trail,
+  image,
 }: {
-  title: string;
-  current?: string;
+  title: React.ReactNode;
+  current?: React.ReactNode;
   eyebrow?: string;
   text?: React.ReactNode;
   trail?: { href: string; label: string }[];
+  // a photo in place of the template's banner background (gets a dark cover so the white text stays readable)
+  image?: string;
 }) {
   return (
-    <section className="breadcrumb-area d-flex  p-relative align-items-center" style={{ backgroundImage: "url(/img/testimonial/test-bg.png)" }}>
+    <section
+      className={`breadcrumb-area d-flex  p-relative align-items-center${image ? " lf-crumb-photo" : ""}`}
+      style={{ backgroundImage: `url(${image ?? "/img/testimonial/test-bg.png"})` }}
+    >
       <div className="container">
         <div className="row align-items-center">
           <div className="col-xl-12 col-lg-12">

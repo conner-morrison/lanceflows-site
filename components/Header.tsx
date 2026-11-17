@@ -10,7 +10,8 @@ export default function Header() {
             <div className="row align-items-center">
               <div className="col-xl-3 col-lg-3">
                 <div className="logo">
-                  <a href="/">
+                  <a href="/" className="lf-logo-link">
+                    <img src="/img/logo-red.png" alt="" className="lf-logo-mark" />
                     <BrandText />
                   </a>
                 </div>
@@ -32,7 +33,7 @@ export default function Header() {
                       </li>
                       {" "}
                       <li>
-                        <a href="/#contact">Contact us</a>
+                        <a href="/contact">Contact us</a>
                       </li>
                     </ul>
                   </nav>

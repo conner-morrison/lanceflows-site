@@ -14,21 +14,21 @@ export const metadata: Metadata = {
 const SERVICES = [
   { icon: "flaticon-coding", h: "Product Engineering", p: "Custom SaaS platforms, enterprise applications, portals, dashboards, and business systems." },
   { icon: "flaticon-chip", h: "AI & Automation", p: "AI voice agents, RAG assistants, document intelligence, workflow agents, and computer vision." },
-  { icon: "flaticon-settings", h: "Cloud & DevOps", p: "Cloud architecture, CI/CD, monitoring, scalability, reliability, and cost-aware operations." },
+  { icon: "fal fa-cloud-upload", h: "Cloud & DevOps", p: "Cloud architecture, CI/CD, monitoring, scalability, reliability, and cost-aware operations." },
   { icon: "flaticon-data-flow", h: "Data & Integration", p: "API integrations, data extraction, web scraping, analytics pipelines, and CRM/ERP integration." },
   { icon: "flaticon-diagram", h: "Architecture & Consulting", p: "Discovery, system design, risk analysis, roadmap planning, and engineering leadership." },
   { icon: "flaticon-maintenance", h: "Maintenance & Growth", p: "Ongoing support, optimization, feature expansion, security improvements, and product evolution." },
 ];
 
 const INDUSTRIES = [
-  { icon: "flaticon-income", b: "Fintech & Payments", s: "Digital banking, transaction workflows, reconciliation, fraud monitoring, KYC/AML, portfolio dashboards." },
-  { icon: "flaticon-heart", b: "Healthcare & Medical", s: "HIPAA-conscious apps, telemedicine, patient portals, EHR/EMR integrations, clinical AI assistants." },
-  { icon: "flaticon-home", b: "Real Estate / PropTech", s: "Property management platforms, MLS/listing integrations, valuation tools, underwriting automation." },
-  { icon: "flaticon-global", b: "Travel & Hospitality", s: "Booking systems, guest portals, ordering platforms, ticketing, revenue and occupancy analytics." },
-  { icon: "flaticon-cube", b: "Logistics & Supply Chain", s: "Shipment tracking, route optimization, warehouse systems, freight automation, inventory analytics." },
-  { icon: "flaticon-insurance", b: "Insurance / InsurTech", s: "Claims workflows, underwriting automation, policy administration, risk modeling, self-service portals." },
-  { icon: "flaticon-idea", b: "Energy & CleanTech", s: "Smart grid platforms, renewable asset monitoring, IoT telemetry, energy analytics, and carbon/ESG reporting." },
-  { icon: "flaticon-network", b: "Vertical AI Applications", s: "Voice agents, RAG assistants, workflow agents, document intelligence, computer vision." },
+  { img: "fintech", b: "Fintech & Payments", s: "Digital banking, transaction workflows, reconciliation, fraud monitoring, KYC/AML, portfolio dashboards." },
+  { img: "healthcare", b: "Healthcare & Medical", s: "HIPAA-conscious apps, telemedicine, patient portals, EHR/EMR integrations, clinical AI assistants." },
+  { img: "realestate", b: "Real Estate / PropTech", s: "Property management platforms, MLS/listing integrations, valuation tools, underwriting automation." },
+  { img: "travel", b: "Travel & Hospitality", s: "Booking systems, guest portals, ordering platforms, ticketing, revenue and occupancy analytics." },
+  { img: "logistics", b: "Logistics & Supply Chain", s: "Shipment tracking, route optimization, warehouse systems, freight automation, inventory analytics." },
+  { img: "insurance", b: "Insurance / InsurTech", s: "Claims workflows, underwriting automation, policy administration, risk modeling, self-service portals." },
+  { img: "energy", b: "Energy & CleanTech", s: "Smart grid platforms, renewable asset monitoring, IoT telemetry, energy analytics, and carbon/ESG reporting." },
+  { img: "ai", b: "Vertical AI Applications", s: "Voice agents, RAG assistants, workflow agents, document intelligence, computer vision." },
 ];
 
 const TECH = [
@@ -59,12 +59,12 @@ const PAINS = [
 ];
 
 const RECEIVE = [
-  { b: "A production-ready product", s: "Software, AI system, automation workflow, or platform aligned with the business goal." },
-  { b: "Clear architecture & docs", s: "Technical documentation explaining how the system works and how it can grow." },
-  { b: "Clean, maintainable codebase", s: "Organized repositories, version control, and a structured deployment setup." },
-  { b: "Integrated systems", s: "APIs, databases, cloud infrastructure, and user-facing interfaces per the project scope." },
-  { b: "Testing & handover", s: "Deployment support, performance checks, and clear handover guidance." },
-  { b: "A future roadmap", s: "A realistic plan for improvements, scalability, maintenance, and next-phase development." },
+  { img: "pr-icon3.png", b: "A production-ready product", s: "Software, AI system, automation workflow, or platform aligned with the business goal." },
+  { img: "pr-icon2.png", b: "Clear architecture & docs", s: "Technical documentation explaining how the system works and how it can grow." },
+  { img: "pr-icon6.png", b: "Clean, maintainable codebase", s: "Organized repositories, version control, and a structured deployment setup." },
+  { img: "pr-icon4.png", b: "Integrated systems", s: "APIs, databases, cloud infrastructure, and user-facing interfaces per the project scope." },
+  { img: "pr-icon5.png", b: "Testing & handover", s: "Deployment support, performance checks, and clear handover guidance." },
+  { img: "pr-roadmap.svg", b: "A future roadmap", s: "A realistic plan for improvements, scalability, maintenance, and next-phase development." },
 ];
 
 const MODELS = [
@@ -75,7 +75,6 @@ const MODELS = [
   { icon: "flaticon-tools", h: "Ongoing support", p: "Maintenance, optimization, and continuous product support." },
 ];
 
-const PR_ICONS = ["pr-icon1", "pr-icon2", "pr-icon3", "pr-icon4", "pr-icon5", "pr-icon6"];
 
 function SectionTitle({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
   return (
@@ -125,10 +124,14 @@ export default function ServicesPage() {
       <OffcanvasMenu />
       <main>
         <Breadcrumb
-          eyebrow="Software Engineering & AI Services"
-          title="From idea to stable, scalable reality."
+          title={
+            <>
+              From idea to
+              <br />
+              stable, scalable reality.
+            </>
+          }
           current="Services"
-          text="A senior software engineering and applied AI team that turns client ideas into reliable products — through clear architecture, disciplined execution, transparent milestones, and long-term scalability planning."
         />
 
         {/* services — what we provide */}
@@ -139,7 +142,7 @@ export default function ServicesPage() {
               title="Full-service delivery, one coordinated system"
               text="Six core capability areas that cover the full lifecycle — from discovery and design to delivery, maintenance, and growth."
             />
-            <div className="row  mt-0 align-items-center">
+            <div className="row mt-0 lf-tile-row">
               {SERVICES.map((s) => (
                 <div className="col-lg-4 col-md-6" key={s.h}>
                   <div className="services-08-item">
@@ -167,17 +170,15 @@ export default function ServicesPage() {
             />
             <div className="row">
               {INDUSTRIES.map((it, i) => (
-                <div className="col-lg-3 col-md-6 mb-30" key={it.b}>
-                  <div className="s-single-services text-center">
-                    <div className="services-icon">
-                      <img src={`/img/icon/${PR_ICONS[i % PR_ICONS.length]}.png`} alt={PR_ICONS[i % PR_ICONS.length]} />
+                <div className="col-lg-3 col-md-6 mb-30 d-flex" key={it.b}>
+                  <div className="single-post2 lf-industry-card">
+                    <div className="blog-thumb2">
+                      <img src={`/img/industry/${it.img}.jpg`} alt={it.b} />
                     </div>
-                    <div className="second-services-content mt-30">
+                    <div className="blog-content2">
+                      <div className="date-home">{String(i + 1).padStart(2, "0")}</div>
                       <h4>{it.b}</h4>
                       <p>{it.s}</p>
-                      <a href="#">
-                        <span>{String(i + 1).padStart(2, "0")}</span>
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -194,7 +195,7 @@ export default function ServicesPage() {
               title="Modern, production-grade tools"
               text="A proven toolset spanning AI, automation, frontend, backend, data, and cloud."
             />
-            <div className="row">
+            <div className="row lf-tech-row">
               {TECH.map((row, i) => (
                 <div className="col-lg-4 col-md-6" key={row.h}>
                   <div className={"pricing-box pricing-box2 text-center mb-60" + (i === 1 ? " active" : "")}>
@@ -282,35 +283,31 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* what you receive */}
-        <section className="choose-area pt-120 pb-120 p-relative">
+        {/* what you receive — laid out like the template's "Our Few Simple Steps" (about.html), without the step numbers */}
+        <section className="services-area services-bg pt-120 pb-90">
           <div className="container">
+            <SectionTitle
+              eyebrow="What you receive"
+              title="Delivered at the end of every engagement"
+              text="Concrete, production-ready outcomes — not just code."
+            />
             <div className="row">
-              <div className="col-xl-6 col-lg-6">
-                <img src="/img/features/choose-img.png" alt="img" />
-              </div>
-              <div className="col-xl-6 col-lg-6">
-                <div className="choose-wrap">
-                  <div className="section-title w-title left-align mb-35">
-                    <h5>What you receive</h5>
-                    <h2>Delivered at the end of every engagement</h2>
-                    <p className="lf-lead">Concrete, production-ready outcomes — not just code.</p>
-                  </div>
-                  <div className="choose-content">
-                    <div className="choose-list">
-                      <ul>
-                        {RECEIVE.map((r, i) => (
-                          <li key={r.b}>
-                            <div className="num">{i + 1}</div>
-                            <strong className="lf-li-title">{r.b}</strong>
-                            {r.s}
-                          </li>
-                        ))}
-                      </ul>
+              {RECEIVE.map((r, i) => (
+                <div className="col-lg-4 col-md-12 mb-30" key={r.b}>
+                  <div className={"s-single-services text-center" + (i === 0 ? " active" : "")}>
+                    <div className="services-icon">
+                      <img src={`/img/icon/${r.img}`} alt="" />
+                    </div>
+                    <div className="second-services-content mt-30">
+                      <h4>{r.b}</h4>
+                      <p>{r.s}</p>
+                    </div>
+                    <div className="arrow">
+                      <img src="/img/icon/arrow-feature.png" alt="" />
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -345,7 +342,7 @@ export default function ServicesPage() {
                   <div className="services-08-content">
                     <h3>Not sure yet?</h3>
                     <p>{"Tell us your goal and we'll recommend the right model."}</p>
-                    <a href="/#contact" className="readmore">
+                    <a href="/contact" className="readmore">
                       Talk to us →
                     </a>
                   </div>

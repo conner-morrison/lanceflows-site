@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="164" height="158" viewBox="0 0 328 316">
+  <!-- Roadmap illustration drawn to match the pr-icon set (flat, red + slate + light grey). -->
+  <!-- ground -->
+  <ellipse cx="164" cy="282" rx="150" ry="26" fill="#f0f0f0"/>
+
+  <!-- planning board -->
+  <g>
+    <rect x="150" y="26" width="150" height="112" rx="6" fill="#e0e0e0"/>
+    <rect x="156" y="32" width="138" height="100" rx="4" fill="#fff"/>
+    <rect x="156" y="32" width="138" height="16" rx="4" fill="#37474f"/>
+    <circle cx="166" cy="40" r="3" fill="#f26b6b"/><circle cx="176" cy="40" r="3" fill="#f5a5a5"/><circle cx="186" cy="40" r="3" fill="#e0e0e0"/>
+    <!-- timeline bars -->
+    <rect x="166" y="60" width="52" height="9" rx="4.5" fill="#e21b2b"/>
+    <rect x="196" y="78" width="60" height="9" rx="4.5" fill="#f26b6b"/>
+    <rect x="226" y="96" width="56" height="9" rx="4.5" fill="#f5a5a5"/>
+    <rect x="176" y="114" width="40" height="9" rx="4.5" fill="#d0d0d0"/>
+    <line x1="166" y1="56" x2="284" y2="56" stroke="#f0f0f0" stroke-width="1.5"/>
+    <line x1="232" y1="54" x2="232" y2="126" stroke="#37474f" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <!-- stand -->
+    <rect x="221" y="138" width="8" height="34" fill="#d0d0d0"/>
+  </g>
+
+  <!-- winding road -->
+  <path d="M40 286 C40 236 150 250 160 214 C170 180 92 184 96 150 C100 120 150 116 158 96"
+        fill="none" stroke="#37474f" stroke-width="22" stroke-linecap="round"/>
+  <path d="M40 286 C40 236 150 250 160 214 C170 180 92 184 96 150 C100 120 150 116 158 96"
+        fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="8 8" stroke-linecap="round"/>
+
+  <!-- milestone pins -->
+  <g>
+    <path d="M60 238 c-11 0 -18 -8 -18 -17 c0 -12 18 -26 18 -26 s18 14 18 26 c0 9 -7 17 -18 17z" fill="#f5a5a5"/>
+    <circle cx="60" cy="220" r="6" fill="#fff"/>
+    <path d="M168 186 c-11 0 -18 -8 -18 -17 c0 -12 18 -26 18 -26 s18 14 18 26 c0 9 -7 17 -18 17z" fill="#f26b6b"/>
+    <circle cx="168" cy="168" r="6" fill="#fff"/>
+    <path d="M78 140 c-11 0 -18 -8 -18 -17 c0 -12 18 -26 18 -26 s18 14 18 26 c0 9 -7 17 -18 17z" fill="#e21b2b"/>
+    <circle cx="78" cy="122" r="6" fill="#fff"/>
+  </g>
+
+  <!-- finish flag -->
+  <g>
+    <rect x="156" y="44" width="4" height="56" fill="#37474f"/>
+    <path d="M160 46 h32 l-8 11 l8 11 h-32z" fill="#e21b2b"/>
+  </g>
+
+  <!-- plant -->
+  <g>
+    <path d="M296 272 c-4 -22 4 -44 18 -54 c-2 18 -8 36 -18 54z" fill="#e21b2b"/>
+    <path d="M292 272 c-12 -14 -16 -32 -10 -46 c8 12 12 30 10 46z" fill="#f26b6b"/>
+    <path d="M286 270 h20 l-3 14 h-14z" fill="#37474f"/>
+  </g>
+
+  <!-- person pointing at the board -->
+  <g>
+    <!-- legs -->
+    <path d="M232 214 l-6 62 h9 l9 -54z" fill="#37474f"/>
+    <path d="M246 214 l8 62 h9 l-4 -62z" fill="#455a64"/>
+    <path d="M222 276 h16 v6 h-20z" fill="#263238"/>
+    <path d="M252 276 h16 l4 6 h-20z" fill="#263238"/>
+    <!-- torso -->
+    <path d="M228 164 c4 -8 30 -8 34 0 l2 52 h-38z" fill="#e21b2b"/>
+    <!-- raised arm -->
+    <path d="M232 170 l-16 -26 l7 -5 l18 22z" fill="#e21b2b"/>
+    <circle cx="217" cy="140" r="6" fill="#f5c3a6"/>
+    <!-- other arm -->
+    <path d="M260 170 l8 34 l-7 2 l-9 -30z" fill="#c4111f"/>
+    <circle cx="265" cy="208" r="5" fill="#f5c3a6"/>
+    <!-- head -->
+    <rect x="240" y="150" width="9" height="12" fill="#f5c3a6"/>
+    <circle cx="245" cy="142" r="13" fill="#f5c3a6"/>
+    <path d="M232 140 c0 -14 10 -18 16 -17 c8 0 13 6 12 12 c-6 -2 -12 -6 -14 -8 c-4 6 -9 10 -14 13z" fill="#263238"/>
+  </g>
+</svg>

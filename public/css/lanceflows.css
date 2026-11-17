@@ -248,3 +248,89 @@
 .slider-four.lf-zoom .slider-bg .image-layer { transform: scale(1.15); }
 /* when the section is left, snap back without animating so the next visit starts fresh */
 .slider-four.lf-zoom-reset .image-layer { transition: none; }
+
+/* ---- Header: logo mark to the left of the wordmark ---- */
+.logo .lf-logo-link { display: inline-flex; align-items: center; gap: 12px; }
+.logo .lf-logo-mark { height: 46px; width: auto; flex-shrink: 0; }
+.logo .lf-brand-tag { white-space: nowrap; }
+/* phones: shrink the mark and wordmark so they stay clear of the menu button */
+@media (max-width: 575px) {
+  .logo .lf-logo-link { gap: 10px; }
+  .logo .lf-logo-mark { height: 36px; }
+  .logo .lf-brand-name { font-size: 26px; }
+  .logo .lf-brand-tag { font-size: 8px; letter-spacing: 1px; margin-top: 5px; }
+}
+/* very narrow phones: no room for the tagline beside the menu button */
+@media (max-width: 359px) {
+  .logo .lf-brand-tag { display: none; }
+}
+
+/* ---- Title banner with a photo (Breadcrumb `image` prop) ---- */
+/* isolation keeps the cover (z-index -1) above the photo and below the text and breadcrumb pill */
+.breadcrumb-area.lf-crumb-photo { background-position: center; isolation: isolate; }
+.breadcrumb-area.lf-crumb-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(43, 42, 42, 0.75);
+}
+
+/* ---- Services: industry image cards (template blog card: .single-post2 / .blog-thumb2 / .blog-content2) ---- */
+.lf-industry-card {
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 11px 16.15px 0.85px rgba(121, 121, 121, 0.07);
+  outline: 2px solid transparent;
+  transition: box-shadow .3s ease, transform .3s ease, outline-color .3s ease;
+}
+/* hover: lift + outline in a lighter tint of the template red (#ed1e24) */
+.lf-industry-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 0, 0, .1); outline-color: #f4686c; }
+.lf-industry-card .blog-thumb2 img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+.lf-industry-card:hover .blog-thumb2 img { transform: scale(1.08); }
+/* the template's red badge sits on the photo's bottom edge */
+.lf-industry-card .blog-content2 { padding: 35px 25px 25px; }
+.lf-industry-card .blog-content2 .date-home {
+  top: -18px;
+  left: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+.lf-industry-card .blog-content2 h4 { font-size: 20px; line-height: 1.3; margin-bottom: 12px; }
+.lf-industry-card .blog-content2 p { margin-bottom: 0; }
+
+/* ---- Services: technology stack boxes level, row by row ---- */
+#pricing .lf-tech-row > [class*="col-"] { display: flex; }
+#pricing .pricing-box { width: 100%; }
+/* the template drops the border on the highlighted box, which shifts its contents by 2px */
+#pricing .pricing-box2.active { border: 2px solid #f5f5f5; }
+
+/* ---- Tile grid: template service cards, all the same size (Services "What we provide") ---- */
+/* every tile the same size, across rows too: a grid with equal-height rows */
+.row.lf-tile-row { display: grid; grid-template-columns: 1fr; grid-auto-rows: 1fr; }
+@media (min-width: 768px) { .row.lf-tile-row { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 992px) { .row.lf-tile-row { grid-template-columns: repeat(3, 1fr); } }
+.lf-tile-row > [class*="col-"] { display: flex; max-width: none; }
+.lf-tile-row .services-08-item { width: 100%; }
+
+
+/* ---- Services "What we provide": Font Awesome cloud icon (Cloud & DevOps), sized to match the template's line icons ---- */
+.services-08-thumb.glyph i.fal { font-size: 34px; line-height: 80px; }
+
+/* ---- Step layout (template "Our Few Simple Steps"): the side arrows only make sense with items side by side ---- */
+@media (max-width: 991px) {
+  .s-single-services .arrow { display: none; }
+}
+
+/* What you receive — illustrations differ in height (112–159px); give every
+   icon box the same height so the titles in a row line up. */
+.services-area .s-single-services .services-icon{height:160px;display:flex;align-items:flex-end;justify-content:center}
