@@ -18,7 +18,7 @@ export default function ContactPage() {
       <Header />
       <OffcanvasMenu />
       <main>
-        <Breadcrumb title="Contact us" image="/img/slider/contact-hero.jpg" />
+        <Breadcrumb title="Let it flow." current="Contact us" image="/img/slider/contact-hero-handshake.jpg" />
 
         {/* contact-area */}
         <section id="contact" className="contact-area contact-bg pt-145 pb-120 p-relative fix">

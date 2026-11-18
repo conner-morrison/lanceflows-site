@@ -273,7 +273,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(43, 42, 42, 0.75);
+  background: rgba(65, 62, 62, 0.7);
 }
 
 /* ---- Services: industry image cards (template blog card: .single-post2 / .blog-thumb2 / .blog-content2) ---- */
@@ -334,3 +334,104 @@
 /* What you receive — illustrations differ in height (112–159px); give every
    icon box the same height so the titles in a row line up. */
 .services-area .s-single-services .services-icon{height:160px;display:flex;align-items:flex-end;justify-content:center}
+
+/* Case Studies hero title: 2nd line starts under the "p" of "problems".
+   2.39em = width of "Real " in Poppins, so it scales with the responsive
+   font size. The block stays centred as a whole. */
+.lf-stagger { display: inline-block; text-align: left; font-size: min(1em, calc((100vw - 64px) / 10.4)); }
+/* (the whole block is ~10.3em wide, so it shrinks on phones to fit the screen) */
+.lf-stagger > span { display: block; white-space: nowrap; }
+.lf-stagger > span + span { padding-left: 2.39em; margin-top: .2em; }
+
+/* ===================== Case studies (redesign) ===================== */
+/* industry filter chips */
+.lf-case-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 45px; }
+.lf-case-filter button {
+  border: 1px solid #e4e4e4; background: #fff; color: #222; border-radius: 30px;
+  padding: 9px 20px; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500;
+  cursor: pointer; transition: all .25s ease;
+}
+.lf-case-filter button span { color: #9d9d9d; font-size: 12px; margin-left: 4px; }
+.lf-case-filter button:hover { border-color: #f4686c; color: #ed1e24; }
+.lf-case-filter button.active { background: #ed1e24; border-color: #ed1e24; color: #fff; }
+.lf-case-filter button.active span { color: rgba(255, 255, 255, .8); }
+
+/* case card (built on the industry card) */
+.lf-case-card2 { display: flex; flex-direction: column; }
+.lf-case-card2 .blog-thumb2 { display: block; overflow: hidden; }
+.lf-case-card2 .blog-content2 { display: flex; flex-direction: column; flex: 1; position: relative; }
+.lf-case-card2 .lf-case-tag { display: block; margin-bottom: 8px; }
+.lf-case-card2 h4 a { color: #222; }
+.lf-case-card2 h4 a:hover { color: #ed1e24; }
+.lf-case-result { background: #fdf1f1; border-left: 3px solid #ed1e24; border-radius: 0 6px 6px 0; padding: 12px 15px; margin: 6px 0 20px; }
+.lf-case-result-label { display: block; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #ed1e24; font-weight: 600; margin-bottom: 4px; }
+.lf-case-result p { margin: 0; font-size: 14px; line-height: 1.6; color: #444; }
+.lf-case-foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 10px; border-top: 1px solid #eee; padding-top: 15px; }
+.lf-case-foot .lf-case-domain { margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lf-case-more { color: #ed1e24; font-weight: 600; font-size: 14px; white-space: nowrap; }
+.lf-case-more i { margin-left: 4px; transition: transform .25s ease; }
+.lf-case-card2:hover .lf-case-more i { transform: translateX(4px); }
+
+/* detail: results at a glance */
+.lf-results-band { background: #f5f5f5; }
+.lf-results-head h5 { color: #ed1e24; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; text-align: center; }
+.lf-result-tile {
+  width: 100%; background: #fff; border-radius: 10px; padding: 30px 28px; border-top: 3px solid #ed1e24;
+  box-shadow: 0px 11px 16.15px 0.85px rgba(121, 121, 121, 0.07);
+}
+.lf-result-tile i { font-size: 32px; color: #ed1e24; display: block; margin-bottom: 16px; }
+.lf-result-tile p { margin: 0; color: #222; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 17px; line-height: 1.55; }
+
+/* detail: mid-page call to action */
+.lf-mid-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  background: #2d2d2d; border-radius: 10px; padding: 30px 35px; margin: 45px 0 10px;
+}
+.lf-mid-cta h4 { color: #fff; margin: 0 0 6px; }
+.lf-mid-cta p { color: #bdbdbd; margin: 0; }
+
+/* detail: testimonial */
+.lf-quote-card { position: relative; background: #f5f5f5; border-radius: 10px; padding: 45px 40px 35px; margin: 50px 0 0; }
+.lf-quote-mark { position: absolute; top: -22px; left: 40px; width: 46px; height: 46px; line-height: 46px; text-align: center; border-radius: 50%; background: #ed1e24; color: #fff; font-size: 18px; }
+.lf-quote-card blockquote { margin: 0 0 25px; padding: 0; border: 0; background: none; font-size: 19px; line-height: 1.7; color: #222; font-style: italic; }
+.lf-quote-card blockquote::before { display: none; }
+.lf-quote-card figcaption { display: flex; align-items: center; gap: 14px; }
+.lf-quote-avatar { width: 50px; height: 50px; line-height: 50px; border-radius: 50%; background: #2d2d2d; color: #fff; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; flex-shrink: 0; }
+.lf-quote-card figcaption strong { display: block; color: #222; font-family: 'Poppins', sans-serif; }
+.lf-quote-card figcaption em { font-style: normal; color: #9d9d9d; font-size: 14px; }
+
+/* detail: sidebar */
+@media (min-width: 992px) { .lf-case-aside { position: sticky; top: 110px; } }
+.lf-snapshot dl { margin: 0; }
+.lf-snapshot dt { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #9d9d9d; font-weight: 500; margin-top: 16px; }
+.lf-snapshot dt:first-child { margin-top: 0; }
+.lf-snapshot dd { margin: 4px 0 0; color: #222; font-weight: 500; }
+.lf-snapshot dd a { color: #ed1e24; }
+.lf-stack ul { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+.lf-stack li { background: #f5f5f5; border-radius: 4px; padding: 6px 12px; font-size: 13px; color: #444; }
+.lf-aside-cta { background: #ed1e24 !important; border-radius: 10px; text-align: center; }
+.lf-aside-cta h3 { color: #fff; font-size: 22px; margin-bottom: 8px; }
+.lf-aside-cta p { color: rgba(255, 255, 255, .85); margin-bottom: 20px; }
+.lf-aside-cta .btn.ss-btn { background: #fff; color: #ed1e24; }
+.lf-aside-cta .btn.ss-btn:hover { background: #2d2d2d; color: #fff; }
+
+/* detail: previous / next */
+.lf-case-nav { display: flex; justify-content: space-between; gap: 30px; border-top: 1px solid #eee; margin-top: 40px; padding-top: 30px; }
+.lf-case-nav a { flex: 1; max-width: 48%; }
+.lf-case-nav span { display: block; font-size: 13px; color: #ed1e24; font-weight: 600; margin-bottom: 6px; }
+.lf-case-nav strong { display: block; color: #222; font-family: 'Poppins', sans-serif; font-size: 17px; line-height: 1.4; }
+.lf-case-nav a:hover strong { color: #ed1e24; }
+@media (max-width: 575px) {
+  .lf-case-nav { flex-direction: column; gap: 20px; }
+  .lf-case-nav a { max-width: none; }
+  .lf-case-nav a.text-right { text-align: left !important; }
+  .lf-mid-cta { padding: 25px; }
+  .lf-quote-card { padding: 40px 25px 28px; }
+}
+/* keep the hero's breadcrumb pill above a band that directly follows the hero */
+.breadcrumb-area.lf-crumb-photo { z-index: 2; }
+/* override template widget list + blockquote styles inside the case page */
+.sidebar-widget .widget.lf-stack li { display: inline-block; float: none; width: auto; border: 0; margin: 0; }
+.lf-quote-card blockquote { text-align: left; padding: 0 !important; }
+.lf-quote-card blockquote::after { display: none; }
+.lf-quote-card figcaption img.lf-quote-avatar.lf-quote-photo { display: block; width: 50px !important; max-width: 50px; height: 50px; object-fit: cover; padding: 0; margin: 0; background: #eee; }

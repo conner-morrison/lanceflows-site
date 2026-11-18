@@ -4,14 +4,28 @@ import OffcanvasMenu from "@/components/OffcanvasMenu";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 import CtaBand from "@/components/CtaBand";
+import CaseGrid from "@/components/case/CaseGrid";
+import type { CaseCardData } from "@/components/case/CaseCard";
 import { CASE_DATA } from "@/lib/cases-data";
-import { categoryIcon, domain } from "@/lib/case-helpers";
+import { INDUSTRY_GROUPS, caseGroups } from "@/lib/case-helpers";
 
 export const metadata: Metadata = {
   title: "Case Studies — Lanceflows | Selected Project Examples",
   description:
-    "Selected, anonymized project examples showing how Lanceflows applies senior engineering judgment, AI, cloud architecture, and automation to real business problems.",
+    "Project examples showing how Lanceflows applies senior engineering judgment, AI, cloud architecture, and automation to real business problems — with the results.",
 };
+
+const CARDS: CaseCardData[] = CASE_DATA.map((c, i) => ({
+  id: c.id,
+  num: String(i + 1).padStart(2, "0"),
+  title: c.title,
+  category: c.category,
+  result: c.resultMetrics[0],
+  liveUrl: c.liveUrl,
+}));
+
+// Only groups that have at least one case get a filter chip.
+const GROUPS = INDUSTRY_GROUPS.filter((g) => CASE_DATA.some((c) => caseGroups(c.category).includes(g)));
 
 export default function CaseStudyPage() {
   return (
@@ -20,52 +34,25 @@ export default function CaseStudyPage() {
       <OffcanvasMenu />
       <main>
         <Breadcrumb
-          title="Real problems, stable solutions."
+          title={<span className="lf-stagger"><span>Real problems,</span><span>stable solutions.</span></span>}
           current="Case Studies"
-          image="/img/slider/b_details01_2x.jpg"
+          image="/img/slider/Bright Modern Office Meeting.png"
         />
 
-        <section id="services-08" className="services-08 pt-145 pb-90 p-relative fix">
+        <section id="cases" className="services-area pt-120 pb-90 p-relative fix" style={{ background: "#f5f5f5" }}>
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
-                <div className="section-title center-align mb-50 text-center">
+                <div className="section-title center-align mb-40 text-center">
+                  <h5>Selected work</h5>
+                  <h2>Problems we&apos;ve solved, results we&apos;ve shipped</h2>
                   <p className="lf-lead">
-                    Verified, enterprise-style project examples across product engineering, AI, cloud, data, and automation. Each one covers the business problem, our technical role, the solution delivered, the verified results, and the workflow impact. Click any card to read the full story.
+                    Each case covers the business problem, our technical role, the solution delivered, the results, and the workflow impact.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="row  mt-0">
-              {CASE_DATA.map((c, i) => {
-                const num = String(i + 1).padStart(2, "0");
-                const tag = c.category.split(" / ")[0];
-                const href = `/case-study/${c.id}`;
-                return (
-                  <div className="col-lg-4 col-md-6 d-flex" key={c.id}>
-                    <div className="services-08-item lf-case-card">
-                      <div className="services-08-thumb glyph">
-                        <i className={"flaticon " + categoryIcon(c.category)}></i>
-                      </div>
-                      <div className="services-08-content">
-                        <div className="lf-case-meta">
-                          <span className="lf-case-num">{num}</span>
-                          <span className="lf-case-tag">{tag}</span>
-                        </div>
-                        <h3>
-                          <a href={href}>{c.title}</a>
-                        </h3>
-                        <p>{c.description}</p>
-                        <p className="lf-case-domain">{domain(c.liveUrl)}</p>
-                        <a href={href} className="readmore">
-                          View case study →
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            <CaseGrid cases={CARDS} groups={GROUPS} />
           </div>
         </section>
 
