@@ -19,7 +19,7 @@ export default function Breadcrumb({
   return (
     <section
       className={`breadcrumb-area d-flex  p-relative align-items-center${image ? " lf-crumb-photo" : ""}`}
-      style={{ backgroundImage: `url("${encodeURI(image ?? "/img/testimonial/test-bg.png")}")` }}
+      style={{ backgroundImage: `url("${encodeURI(image ?? "/img/testimonial/test-bg.webp")}")` }}
     >
       <div className="container">
         <div className="row align-items-center">

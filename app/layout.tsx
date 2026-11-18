@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import TemplateScripts from "@/components/TemplateScripts";
-import HumanVerify from "@/components/HumanVerify";
 
 export const metadata: Metadata = {
   title: "Lanceflows — Software Engineering & AI Services",
@@ -37,7 +36,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ))}
       </head>
       <body>
-        <HumanVerify />
         <div className="circle"></div>
         <div className="cursor"></div>
         {children}

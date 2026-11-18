@@ -198,38 +198,6 @@
 }
 .lf-legal a { color: #ed1e24; }
 
-/* ---- Human verification gate (ported from Lanceflows) ---- */
-.vh-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 2147483647;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: #2d2d2d;
-  opacity: 1;
-  transition: opacity .45s ease;
-}
-.vh-overlay.vh-hide { opacity: 0; pointer-events: none; }
-.vh-card {
-  width: 100%;
-  max-width: 420px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 34px 30px;
-  text-align: center;
-  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .55);
-}
-.vh-logo { margin: 0 auto 18px; }
-.vh-logo .lf-brand-name { color: #222; }
-.vh-card h2 { font-size: 24px; margin: 0 0 8px; }
-.vh-card p { font-size: 15px; margin: 0 0 24px; }
-.vh-turnstile { display: flex; justify-content: center; min-height: 65px; }
-.vh-error { color: #c0455f; font-size: 14px; margin: 14px 0 0; }
-.vh-foot { margin-top: 18px; font-size: 12px; color: #9d9d9d; }
-@media (prefers-reduced-motion: reduce) { .vh-overlay { transition: none; } }
-
 /* ---- Home slider: dark grey half-transparent cover over the background image ---- */
 /* sits above .image-layer (z 1, earlier in the DOM) and below the decorative lines (z 2-3) and text (z 9) */
 .slider-four .slider-bg::after {

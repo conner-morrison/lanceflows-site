@@ -36,7 +36,7 @@ export default function CaseStudyPage() {
         <Breadcrumb
           title={<span className="lf-stagger"><span>Real problems,</span><span>stable solutions.</span></span>}
           current="Case Studies"
-          image="/img/slider/Bright Modern Office Meeting.png"
+          image="/img/slider/case-study-hero.webp"
         />
 
         <section id="cases" className="services-area pt-120 pb-90 p-relative fix" style={{ background: "#f5f5f5" }}>
