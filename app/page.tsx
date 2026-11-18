@@ -16,10 +16,10 @@ const SLIDES = [
 ];
 
 const STATS = [
-  { n: "50", s: "+", l: ["Projects", "delivered"] },
+  { n: "20", s: "+", l: ["Projects", "delivered"] },
   { n: "98", s: "%", l: ["Client", "satisfaction"] },
-  { n: "20", s: "+", l: ["Senior", "engineers"] },
-  { n: "10", s: "+", l: ["Industries", "served"] },
+  { n: "10", s: "+", l: ["Senior", "employees"] },
+  { n: "5", s: "+", l: ["Industries", "served"] },
 ];
 
 const FEATURES = [
