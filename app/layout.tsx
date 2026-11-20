@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import TemplateScripts from "@/components/TemplateScripts";
+import ClientNav from "@/components/ClientNav";
+import TavusAgent from "@/components/tavus/TavusAgent";
+import { CASE_DATA } from "@/lib/cases-data";
+import { INDUSTRY_GROUPS, caseGroups } from "@/lib/case-helpers";
 
 export const metadata: Metadata = {
   title: "Lanceflows — Software Engineering & AI Services",
@@ -25,6 +29,10 @@ const STYLESHEETS = [
   "/css/lanceflows.css",
 ];
 
+// Compact case-study index and industry filters for the Tavus agent's tools.
+const TAVUS_CASES = CASE_DATA.map(({ id, title, category }) => ({ id, title, category }));
+const TAVUS_GROUPS = INDUSTRY_GROUPS.filter((g) => CASE_DATA.some((c) => caseGroups(c.category).includes(g)));
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     // Modernizr swaps "no-js" for its feature classes once it runs.
@@ -40,6 +48,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="cursor"></div>
         {children}
         <TemplateScripts />
+        <ClientNav />
+        <TavusAgent cases={TAVUS_CASES} groups={TAVUS_GROUPS} />
       </body>
     </html>
   );

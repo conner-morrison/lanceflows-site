@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { caseImage, domain } from "@/lib/case-helpers";
 
 export type CaseCardData = {
@@ -15,14 +16,14 @@ export default function CaseCard({ c }: { c: CaseCardData }) {
   const href = `/case-study/${c.id}`;
   return (
     <div className="single-post2 lf-industry-card lf-case-card2">
-      <a href={href} className="blog-thumb2" tabIndex={-1} aria-hidden="true">
+      <Link href={href} className="blog-thumb2" tabIndex={-1} aria-hidden="true">
         <img src={caseImage(c.category)} alt="" />
-      </a>
+      </Link>
       <div className="blog-content2">
         <div className="date-home">{c.num}</div>
         <span className="lf-case-tag">{c.category.split(" / ")[0]}</span>
         <h4>
-          <a href={href}>{c.title}</a>
+          <Link href={href}>{c.title}</Link>
         </h4>
         <div className="lf-case-result">
           <span className="lf-case-result-label">Key result</span>
@@ -30,9 +31,9 @@ export default function CaseCard({ c }: { c: CaseCardData }) {
         </div>
         <div className="lf-case-foot">
           <span className="lf-case-domain">{domain(c.liveUrl)}</span>
-          <a href={href} className="lf-case-more">
+          <Link href={href} className="lf-case-more">
             Read case study <i className="fal fa-long-arrow-right"></i>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

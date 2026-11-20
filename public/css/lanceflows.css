@@ -403,3 +403,37 @@
 .lf-quote-card blockquote { text-align: left; padding: 0 !important; }
 .lf-quote-card blockquote::after { display: none; }
 .lf-quote-card figcaption img.lf-quote-avatar.lf-quote-photo { display: block; width: 50px !important; max-width: 50px; height: 50px; object-fit: cover; padding: 0; margin: 0; background: #eee; }
+
+/* ---- Tavus "Talk live" triggers (start a video call with the AI agent) ---- */
+.main-menu ul li.lf-talk-item { margin-left: 22px; }
+.header-three .main-menu ul li a.lf-talk-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px; border-radius: 50px;
+  background: #ed1e24; color: #fff; line-height: 1.2;
+  transition: background .2s ease;
+}
+.header-three .main-menu ul li a.lf-talk-btn:hover { background: #c9141a; color: #fff; }
+.header-three .main-menu ul li a.lf-talk-btn i { font-size: 14px; }
+.lf-btn-outline-light,
+.lf-btn-outline-light:hover {
+  background: transparent; color: #fff; border: 2px solid #fff;
+  border-radius: 50px; padding: 16px 32px; font-weight: 600;
+}
+.lf-btn-outline-light:hover { background: #fff; color: #ed1e24; }
+.lf-btn-outline-light i { margin-right: 6px; }
+/* mobile menu copy of the header button: plain menu row */
+.mean-container .mean-nav ul li a.lf-talk-btn { background: none; border-radius: 0; color: #ed1e24; }
+/* CTA band: the two buttons stack evenly in the right column */
+.newslater-area .lf-btn-light, .newslater-area .lf-btn-outline-light { min-width: 250px; text-align: center; }
+.newslater-area .lf-btn-outline-light { margin: 12px 0 0; }
+/* keep the template's scroll-to-top button clear of the Tavus launcher (bottom-right) */
+#scrollUp { bottom: 130px; }
+/* header right column: the Talk live button (replaces the old "Contact us" email box) */
+.lf-talk-box a.lf-talk-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 26px; border-radius: 50px;
+  background: #ed1e24; color: #fff; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 16px; line-height: 1.2;
+  transition: background .2s ease;
+}
+.lf-talk-box a.lf-talk-btn:hover { background: #c9141a; color: #fff; }
+.lf-talk-box a.lf-talk-btn i { font-size: 14px; }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import OffcanvasMenu from "@/components/OffcanvasMenu";
@@ -342,9 +343,9 @@ export default function ServicesPage() {
                   <div className="services-08-content">
                     <h3>Not sure yet?</h3>
                     <p>{"Tell us your goal and we'll recommend the right model."}</p>
-                    <a href="/contact" className="readmore">
+                    <Link href="/contact" className="readmore">
                       Talk to us →
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

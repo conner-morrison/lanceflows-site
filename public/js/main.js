@@ -1,6 +1,11 @@
 (function ($) {
 "use strict";
 
+// Page-level setup. Runs on first load and again after every client-side
+// page change (TemplateScripts calls window.lfInitPage), so it must be safe
+// to repeat: one-time, window-wide pieces are guarded below.
+function initPage() {
+
 
 
 // skill
@@ -24,7 +29,7 @@ $(".skill-per").each(function() {
     
     
 // sticky
-$(window).on('scroll', function () {
+$(window).off('scroll.lfsticky').on('scroll.lfsticky', function () {
 	var scroll = $(window).scrollTop();
 	if (scroll < 200) {
 		$("#header-sticky").removeClass("sticky-menu");
@@ -39,10 +44,12 @@ $('.responsive').on('click', function (e) {
 });
 
 // meanmenu
+	if (!$('.mobile-menu .mean-bar').length) {
 	$('#mobile-menu').meanmenu({
 		meanMenuContainer: '.mobile-menu',
 		meanScreenWidth: "992"
 	});
+	}
 
 	$('.info-bar').on('click', function () {
 		$('.extra-info').addClass('info-open');
@@ -594,7 +601,11 @@ $('.button-group > button').on('click', function(event) {
 });
 
 // WOW active
-new WOW().init();
+// one instance; its live mode picks up elements of later pages
+if (!window.__lfWow) {
+	window.__lfWow = new WOW();
+	window.__lfWow.init();
+}
     
 //Tabs Box
 	if($('.tabs-box').length){
@@ -615,5 +626,10 @@ new WOW().init();
 		});
 	}
 
+
+}
+
+window.lfInitPage = initPage;
+initPage();
 
 })(jQuery);

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import OffcanvasMenu from "@/components/OffcanvasMenu";
@@ -193,7 +194,7 @@ export default function TermsPage() {
 
                     <h2>16. Contact Us</h2>
                     <p>
-                      Questions about these Terms? Please <a href="/contact">contact us</a> and our
+                      Questions about these Terms? Please <Link href="/contact">contact us</Link> and our
                       team will be glad to help.
                     </p>
                               </div>

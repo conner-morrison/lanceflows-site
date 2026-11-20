@@ -1,3 +1,4 @@
+import Link from "next/link";
 // Page title banner with the breadcrumb pill. Lanceflows page heroes have an
 // eyebrow and an intro paragraph; they sit above and below the title.
 export default function Breadcrumb({
@@ -37,12 +38,12 @@ export default function Breadcrumb({
               <ol className="breadcrumb">
                 {" "}
                 <li className="breadcrumb-item">
-                  <a href="/">Overview</a>
+                  <Link href="/">Overview</Link>
                 </li>
                 {" "}
                 {trail?.map((t) => (
                   <li className="breadcrumb-item" key={t.href}>
-                    <a href={t.href}>{t.label}</a>
+                    <Link href={t.href}>{t.label}</Link>
                   </li>
                 ))}
                 <li className="breadcrumb-item active" aria-current="page">{current}</li>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BrandText from "./BrandText";
 
 export default function Footer() {
@@ -24,19 +25,19 @@ export default function Footer() {
                 <div className="footer-link">
                   <ul>
                     <li>
-                      <a href="/services">Services</a>
+                      <Link href="/services">Services</Link>
                     </li>
                     <li>
-                      <a href="/case-study">Case Studies</a>
+                      <Link href="/case-study">Case Studies</Link>
                     </li>
                     <li>
-                      <a href="/#about">About us</a>
+                      <Link href="/#about">About us</Link>
                     </li>
                     <li>
-                      <a href="/#why">Why Lanceflows</a>
+                      <Link href="/#why">Why Lanceflows</Link>
                     </li>
                     <li>
-                      <a href="/contact">Contact</a>
+                      <Link href="/contact">Contact</Link>
                     </li>
                   </ul>
                 </div>
@@ -50,7 +51,7 @@ export default function Footer() {
                 <div className="footer-link">
                   <ul>
                     <li>
-                      <a href="/contact">Request a quote</a>
+                      <Link href="/contact">Request a quote</Link>
                     </li>
                     <li>
                       <a href="https://cal.com/lanceflows" target="_blank" rel="noopener">
@@ -105,14 +106,14 @@ export default function Footer() {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-6">
-              <a href="/">
+              <Link href="/">
                 <BrandText tagline={false} />
-              </a>
+              </Link>
             </div>
             <div className="col-lg-6 col-md-6 text-right text-xl-right">
               © 2026 Lanceflows. All rights reserved.
-              <a className="lf-foot-link" href="/privacy">Privacy Policy</a>
-              <a className="lf-foot-link" href="/terms">Terms of Services</a>
+              <Link className="lf-foot-link" href="/privacy">Privacy Policy</Link>
+              <Link className="lf-foot-link" href="/terms">Terms of Services</Link>
             </div>
           </div>
         </div>

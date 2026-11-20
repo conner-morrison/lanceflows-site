@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BrandText from "./BrandText";
 
 // Site header (Sumolo header-three) with the Lanceflows navigation.
@@ -10,10 +11,10 @@ export default function Header() {
             <div className="row align-items-center">
               <div className="col-xl-3 col-lg-3">
                 <div className="logo">
-                  <a href="/" className="lf-logo-link">
+                  <Link href="/" className="lf-logo-link">
                     <img src="/img/logo-red.png" alt="" className="lf-logo-mark" />
                     <BrandText />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-xl-6 col-lg-9">
@@ -21,43 +22,38 @@ export default function Header() {
                   <nav id="mobile-menu">
                     <ul>
                       <li>
-                        <a href="/">Overview</a>
+                        <Link href="/">Overview</Link>
                       </li>
                       {" "}
                       <li>
-                        <a href="/services">Services</a>
+                        <Link href="/services">Services</Link>
                       </li>
                       {" "}
                       <li>
-                        <a href="/case-study">Case Studies</a>
+                        <Link href="/case-study">Case Studies</Link>
                       </li>
                       {" "}
                       <li>
-                        <a href="/contact">Contact us</a>
+                        <Link href="/contact">Contact us</Link>
+                      </li>
+                      {" "}
+                      {/* narrower screens (incl. the mobile menu copy); wide screens use the button on the right */}
+                      <li className="lf-talk-item d-xl-none">
+                        {/* starts a live video call with the Lanceflows AI agent (components/tavus/TavusAgent.tsx) */}
+                        <a href="#talk" data-tavus-start className="lf-talk-btn">
+                          <i className="fas fa-video"></i> Talk live
+                        </a>
                       </li>
                     </ul>
                   </nav>
                 </div>
               </div>
-              <div className="col-xl-3 col-lg-3 text-left d-none d-xl-block">
+              <div className="col-xl-3 col-lg-3 text-right d-none d-xl-block">
                 {" "}
-                <div className="call-box">
-                  <ul>
-                    <li>
-                      <div className="icon">
-                        <img src="/img/icon/phone-call.png" alt="top-m-icon.png" />
-                      </div>
-                    </li>
-                    {" "}
-                    <li>
-                      <div className="text">
-                        <span>Contact us</span>
-                        <strong>
-                          <a href="mailto:admin@lanceflows.com">admin@lanceflows.com</a>
-                        </strong>
-                      </div>
-                    </li>
-                  </ul>
+                <div className="lf-talk-box">
+                  <a href="#talk" data-tavus-start className="lf-talk-btn">
+                    <i className="fas fa-video"></i> Talk live
+                  </a>
                 </div>
                 {" "}
               </div>

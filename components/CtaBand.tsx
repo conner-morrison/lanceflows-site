@@ -1,3 +1,4 @@
+import Link from "next/link";
 // Lanceflows call-to-action, set in the template's red newsletter band.
 export default function CtaBand({
   title,
@@ -26,8 +27,11 @@ export default function CtaBand({
             </div>
           </div>
           <div className="col-xl-4 col-lg-4 text-lg-right">
-            <a href={href} className="btn lf-btn-light">
+            <Link href={href} className="btn lf-btn-light">
               {button}
+            </Link>
+            <a href="#talk" data-tavus-start className="btn lf-btn-outline-light">
+              <i className="fas fa-video"></i> Talk to us live
             </a>
           </div>
         </div>

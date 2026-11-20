@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import OffcanvasMenu from "@/components/OffcanvasMenu";
@@ -171,7 +172,7 @@ export default function PrivacyPage() {
                     <h2>12. Contact Us</h2>
                     <p>
                       If you have questions about this policy or how we handle your information, please{" "}
-                      <a href="/contact">contact us</a> and our team will be glad to help.
+                      <Link href="/contact">contact us</Link> and our team will be glad to help.
                     </p>
                               </div>
                 </div>

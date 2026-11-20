@@ -1,3 +1,4 @@
+import Link from "next/link";
 // Slide-in side menu and its overlay (opened/closed by main.js).
 export default function OffcanvasMenu() {
   return (
@@ -9,16 +10,16 @@ export default function OffcanvasMenu() {
         <div id="cssmenu3" className="menu-one-page-menu-container">
           <ul id="menu-one-page-menu-2" className="menu">
             <li className="menu-item menu-item-type-custom menu-item-object-custom">
-              <a href="/">Overview</a>
+              <Link href="/">Overview</Link>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom">
-              <a href="/services">Services</a>
+              <Link href="/services">Services</Link>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom">
-              <a href="/case-study">Case Studies</a>
+              <Link href="/case-study">Case Studies</Link>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom">
-              <a href="/contact">Contact</a>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -30,9 +31,9 @@ export default function OffcanvasMenu() {
               </a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom">
-              <a href="/contact">
+              <Link href="/contact">
                 <span>Miami, FL</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -1,13 +1,15 @@
 "use client";
 
-import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 // The template's jQuery plugins and main.js, in the template's order.
 // They run once per page load, after React has hydrated the markup, and
 // drive the sliders, mobile menu, sticky header, popups, counters,
 // portfolio filter, WOW animations and scroll-to-top exactly as in the
-// HTML version. Internal links are plain <a> tags, so every navigation is
-// a full page load, as in the original site.
+// HTML version. Pages change client-side (so a Tavus call survives), so
+// after each page change the page-level setup in main.js runs again for the
+// new markup via window.lfInitPage.
 const SCRIPTS = [
   "/js/vendor/modernizr-3.5.0.min.js",
   "/js/vendor/jquery-3.6.0.min.js",
@@ -43,10 +45,15 @@ function load(src: string) {
 declare global {
   interface Window {
     __sumoloScripts?: boolean;
+    lfInitPage?: () => void;
+    Waypoint?: { destroyAll: () => void };
   }
 }
 
 export default function TemplateScripts() {
+  const pathname = usePathname();
+  const lastPath = useRef(pathname);
+
   useEffect(() => {
     // React runs effects twice in development; the plugins must init once.
     if (window.__sumoloScripts) return;
@@ -55,5 +62,20 @@ export default function TemplateScripts() {
       for (const src of SCRIPTS) await load(src);
     })();
   }, []);
+
+  // Re-run the page-level plugins for the new page's markup.
+  useEffect(() => {
+    if (lastPath.current === pathname) return;
+    lastPath.current = pathname;
+    // Close the off-canvas menu if it was open when a link was clicked.
+    document.querySelectorAll(".offcanvas-menu.active, .offcanvas-overly.active").forEach((el) => el.classList.remove("active"));
+    if (!window.lfInitPage) return; // first load still in progress; main.js will init this page itself
+    const id = requestAnimationFrame(() => {
+      window.Waypoint?.destroyAll(); // counters of the previous page
+      window.lfInitPage?.();
+    });
+    return () => cancelAnimationFrame(id);
+  }, [pathname]);
+
   return null;
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
@@ -137,9 +138,9 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
               <div className="col-lg-8">
                 <div className="blog-details-wrap">
                   <div className="details__content lf-case pb-30">
-                    <a className="lf-back-link" href="/case-study">
+                    <Link className="lf-back-link" href="/case-study">
                       ← All case studies
-                    </a>
+                    </Link>
 
                     <h3 className="mt-0">Overview</h3>
                     <p>{c.description}</p>
@@ -177,9 +178,9 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
                         <h4>Facing a similar challenge?</h4>
                         <p>Tell us where you are today — we&apos;ll map out how we&apos;d approach it.</p>
                       </div>
-                      <a href="/contact" className="btn ss-btn">
+                      <Link href="/contact" className="btn ss-btn">
                         <span>Contact us</span>
-                      </a>
+                      </Link>
                     </div>
 
                     <h3>Operational business value</h3>
@@ -237,7 +238,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
                             {(c.serviceAreas ?? []).map((a, k) => (
                               <span key={a}>
                                 {k > 0 && ", "}
-                                <a href="/services">{a}</a>
+                                <Link href="/services">{a}</Link>
                               </span>
                             ))}
                           </dd>
@@ -262,9 +263,9 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
                   <section className="widget lf-aside-cta">
                     <h3>Have a project like this?</h3>
                     <p>Book a free intro call — no commitment.</p>
-                    <a href="/contact" className="btn ss-btn">
+                    <Link href="/contact" className="btn ss-btn">
                       <span>Start a conversation</span>
-                    </a>
+                    </Link>
                   </section>
                 </aside>
               </div>
@@ -273,14 +274,14 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
 
             {/* previous / next case */}
             <nav className="lf-case-nav" aria-label="More case studies">
-              <a href={`/case-study/${prev.id}`}>
+              <Link href={`/case-study/${prev.id}`}>
                 <span>← Previous case</span>
                 <strong>{prev.title}</strong>
-              </a>
-              <a href={`/case-study/${next.id}`} className="text-right">
+              </Link>
+              <Link href={`/case-study/${next.id}`} className="text-right">
                 <span>Next case →</span>
                 <strong>{next.title}</strong>
-              </a>
+              </Link>
             </nav>
           </div>
         </section>
