@@ -4,6 +4,12 @@
 // Deployment created in the Tavus PAL Maker (Widget channel). Not a secret.
 export const TAVUS_DEPLOYMENT_ID = "8fc1c7c5-111b-440c-8968-03d91960c60e";
 
+// Page-level overrides deep-merged over the deployment's portal settings.
+// Hides the "Powered by Tavus" badge (allowed on this account's plan).
+export const TAVUS_OVERRIDE_CONFIG = JSON.stringify({
+  customization: { branding: { hide_tavus_badge: true } },
+});
+
 // Pages the agent can open with the navigate_to_page tool.
 export const SITE_PAGES: Record<string, { path: string; label: string }> = {
   home: { path: "/", label: "Overview (home)" },

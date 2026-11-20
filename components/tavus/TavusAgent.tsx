@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import {
   TAVUS_DEPLOYMENT_ID,
+  TAVUS_OVERRIDE_CONFIG,
   SITE_PAGES,
   describePage,
   findSection,
@@ -251,5 +252,5 @@ export default function TavusAgent({ cases, groups }: { cases: CaseRef[]; groups
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  return <tavus-widget deployment-id={TAVUS_DEPLOYMENT_ID} />;
+  return <tavus-widget deployment-id={TAVUS_DEPLOYMENT_ID} override-config={TAVUS_OVERRIDE_CONFIG} />;
 }
